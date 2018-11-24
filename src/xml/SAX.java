@@ -2,6 +2,7 @@ package xml;
 
 import model.Atividade;
 import model.Evento;
+import model.TipoAtividade;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -48,7 +49,7 @@ public class SAX extends DefaultHandler {
     public void endElement(String uri, String localName, String qName) throws SAXException{
 
         if (qName.equals("tipo")) {
-            atividade.setTipo(valor);
+            atividade.setTipo(TipoAtividade.valueOf(valor.toUpperCase()));
         } else if (qName.equals("título")) {
             atividade.setTitulo(valor);
         } else if (qName.equals("dia")) {

@@ -19,7 +19,7 @@ public class EventoDAO {
             con = conexaoBD.getConection();
             con.setAutoCommit(false);
             pStat = con.prepareStatement(sql);
-            pStat.setString(1, atividade.getTipo());
+            pStat.setString(1, atividade.getTipo().getValor());
             pStat.setString(2, atividade.getTitulo());
             pStat.setTimestamp(3, DateTimeUtil.toTimeStamp(atividade.getDia(), atividade.getHorario()));
             pStat.setString(4,atividade.getResponsavel());

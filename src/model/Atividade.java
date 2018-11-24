@@ -2,6 +2,7 @@ package model;
 
 import xml.adapter.DataAdapter;
 import xml.adapter.TimeAdapter;
+import xml.adapter.TipoAtividadeAdapter;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -14,7 +15,8 @@ import java.time.LocalTime;
 public class Atividade {
 
     @XmlElement(name = "tipo")
-    private String tipo;
+    @XmlJavaTypeAdapter(TipoAtividadeAdapter.class)
+    private TipoAtividade tipo;
 
     @XmlElement(name = "título")
     private String titulo;
@@ -30,7 +32,7 @@ public class Atividade {
     @XmlElement(name = "responsável")
     private String responsavel;
 
-    public Atividade(String tipo, String titulo, LocalDate dia, LocalTime horario, String responsavel) {
+    public Atividade(TipoAtividade tipo, String titulo, LocalDate dia, LocalTime horario, String responsavel) {
         this.tipo = tipo;
         this.titulo = titulo;
         this.dia = dia;
@@ -41,11 +43,11 @@ public class Atividade {
     public Atividade() {
     }
 
-    public String getTipo() {
+    public TipoAtividade getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoAtividade tipo) {
         this.tipo = tipo;
     }
 

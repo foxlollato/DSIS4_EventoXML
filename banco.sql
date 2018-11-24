@@ -8,3 +8,4 @@ diaHora TIMESTAMP,
 responsavel varchar(30)
 );
 
+select * from evento.atividade;
