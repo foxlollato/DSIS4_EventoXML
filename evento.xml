@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<evento>
+    <atividade>
+		<tipo>palestra</tipo>
+        <título>Matemática, computação, jogos...Como garantir que ninguém vai descobrir sua senha?</título>
+		<dia>23/10</dia> <!-- dia/mês -->
+		<horário>09:30</horário> <!-- hora:minuto -->
+        <responsável>Marina Andretta</responsável>
+    </atividade>
+	<atividade>
+		<tipo>oficina</tipo>
+        <título>Currículo e Entrevista de Emprego</título>
+		<dia>24/10</dia>
+		<horário>09:30</horário>
+        <responsável>Elí Antonio Campanhol</responsável>
+    </atividade>
+    <atividade>
+		<tipo>minicurso</tipo>
+        <título>Introdução à plataforma Arduino</título>
+		<dia>24/10</dia>
+		<horário>13:30</horário>
+        <responsável>Leonardo Bonacini</responsável>
+    </atividade>
+	<atividade>
+		<tipo>minicurso</tipo>
+        <título>Introdução à plataforma Arduino</título>
+		<dia>25/10</dia>
+		<horário>13:30</horário>
+        <responsável>Leonardo Bonacini</responsável>
+    </atividade>
+	<atividade>
+		<tipo>minicurso</tipo>
+        <título>Introdução à plataforma Arduino</título>
+		<dia>26/10</dia>
+		<horário>13:30</horário>
+        <responsável>Leonardo Bonacini</responsável>
+    </atividade>
+	<atividade>
+		<tipo>oficina</tipo>
+        <título>LaTex: Noções e Aplicações</título>
+		<dia>25/10</dia>
+		<horário>14:30</horário>
+        <responsável>Matheus Machado Garcia</responsável>
+    </atividade>
+	<atividade>
+		<tipo>oficina</tipo>
+        <título>LaTex: Noções e Aplicações</título>
+		<dia>26/10</dia>
+		<horário>14:30</horário>
+        <responsável>Matheus Machado Garcia</responsável>
+    </atividade>
+</evento>
