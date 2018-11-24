@@ -2,8 +2,7 @@ package dao;
 
 import bd.ConexaoBD;
 import model.Atividade;
-import util.DateUtil;
-import util.TimeUtil;
+import util.DateTimeUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +12,7 @@ public class EventoDAO {
 
         public void salvar(Atividade atividade){
         ConexaoBD conexaoBD = ConexaoBD.getInstance();
-        String sql = "insert into atividade(tipo, titulo, dia, horario, responsavel) values(?,?,?,?,?)";
+        String sql = "insert into atividade(tipo, titulo, diaHora, responsavel) values(?,?,?,?)";
         Connection con = null;
         PreparedStatement pStat = null;
         try{
@@ -22,9 +21,8 @@ public class EventoDAO {
             pStat = con.prepareStatement(sql);
             pStat.setString(1, atividade.getTipo());
             pStat.setString(2, atividade.getTitulo());
-            pStat.setDate(3, DateUtil.toSqlDate(atividade.getDia()));
-            pStat.setTime(4, TimeUtil.toSqlTime(atividade.getHorario()));
-            pStat.setString(5,atividade.getResponsavel());
+            pStat.setTimestamp(3, DateTimeUtil.toTimeStamp(atividade.getDia(), atividade.getHorario()));
+            pStat.setString(4,atividade.getResponsavel());
             pStat.executeUpdate();
             con.commit();
 

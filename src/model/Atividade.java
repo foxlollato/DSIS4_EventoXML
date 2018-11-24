@@ -1,7 +1,7 @@
 package model;
 
-import util.DataAdapter;
-import util.TimeAdapter;
+import xml.adapter.DataAdapter;
+import xml.adapter.TimeAdapter;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -79,5 +79,16 @@ public class Atividade {
 
     public void setResponsavel(String responsavel) {
         this.responsavel = responsavel;
+    }
+
+    @Override
+    public String toString() {
+        return "Atividade{" +
+                "tipo='" + tipo + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", dia=" + dia +
+                ", horario=" + horario +
+                ", responsavel='" + responsavel + '\'' +
+                '}';
     }
 }

@@ -1,35 +1,33 @@
 package xml;
 
 import model.Atividade;
+import model.Evento;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-import util.DataAdapter;
-import util.TimeAdapter;
-
-
-import java.util.ArrayList;
-import java.util.List;
+import util.DateTimeUtil;
+import xml.adapter.DataAdapter;
+import xml.adapter.TimeAdapter;
 
 public class SAX extends DefaultHandler {
 
-    private List<Atividade> lista;
+    private Evento lista;
     private Atividade atividade;
     private String valor;
 
-    public List<Atividade> getLista() {
+    public Evento getLista() {
         return lista;
     }
 
     @Override
     public void startDocument() throws SAXException {
-        System.out.println("Início do parsing");
-        lista = new ArrayList<>();
+
+        lista = new Evento();
     }
 
     @Override
     public void endDocument() throws SAXException {
-        System.out.println("Fim do parsing");
+
     }
 
     @Override
@@ -48,24 +46,21 @@ public class SAX extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException{
-        try {
 
-            if (qName.equals("tipo")) {
-                atividade.setTipo(valor);
-            } else if (qName.equals("título")) {
-                atividade.setTitulo(valor);
-            } else if (qName.equals("dia")) {
+        if (qName.equals("tipo")) {
+            atividade.setTipo(valor);
+        } else if (qName.equals("título")) {
+            atividade.setTitulo(valor);
+        } else if (qName.equals("dia")) {
 
-                atividade.setDia(new DataAdapter().unmarshal(valor));
+            atividade.setDia(DateTimeUtil.toLocalDate(valor));
 
-            } else if (qName.equals("horário")) {
-                atividade.setHorario(new TimeAdapter().unmarshal(valor));
+        } else if (qName.equals("horário")) {
+            atividade.setHorario(DateTimeUtil.toLocalTime(valor));
 
-            } else if (qName.equals("responsável")) {
-                atividade.setResponsavel(valor);
-            }
-        }catch(Exception e){
-            throw new RuntimeException(e);
+        } else if (qName.equals("responsável")) {
+            atividade.setResponsavel(valor);
         }
+
     }
 }
