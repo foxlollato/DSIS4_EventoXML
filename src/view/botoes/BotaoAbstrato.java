@@ -21,14 +21,10 @@ public abstract class BotaoAbstrato extends JButton {
         int check = chooser.showOpenDialog(null);
 
         if(check == JFileChooser.APPROVE_OPTION){
-
             this.arquivo = chooser.getSelectedFile().getPath();
-
         }else if(check == JFileChooser.ERROR_OPTION){
-
             JOptionPane.showMessageDialog(null,"Erro ao abrir o arquivo.");
 
         }
-
     }
 }

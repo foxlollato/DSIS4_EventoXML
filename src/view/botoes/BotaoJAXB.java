@@ -13,9 +13,12 @@ public class BotaoJAXB extends BotaoAbstrato {
 
     @Override
     public AlgoritimoLeituraXML getAlgoritimo() {
+        LeitorJAXB leitor = null;
         chooseFile();
-        LeitorJAXB leitor = new LeitorJAXB(arquivo);
-        leitor.setClasses(Evento.class);
+        if(super.arquivo != null){
+            leitor = new LeitorJAXB(super.arquivo);
+            leitor.setClasses(Evento.class);
+        }
         return leitor;
     }
 

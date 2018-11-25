@@ -18,7 +18,7 @@ public class DateTimeUtil {
     private static DateTimeFormatter formatterData = new DateTimeFormatterBuilder().appendPattern("dd/MM")
             .parseDefaulting(ChronoField.YEAR, Year.now().getValue())
             .toFormatter();
-   private static DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm");
+    private static DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm");
 
     public static Timestamp toTimeStamp(LocalDate date, LocalTime time){
         date.format(formatterData);

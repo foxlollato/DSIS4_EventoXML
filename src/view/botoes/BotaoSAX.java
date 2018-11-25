@@ -12,8 +12,11 @@ public class BotaoSAX extends BotaoAbstrato{
 
     @Override
     public AlgoritimoLeituraXML getAlgoritimo() {
+        LeitorSAX leitor = null;
         chooseFile();
-        LeitorSAX leitor = new LeitorSAX(arquivo);
+        if(super.arquivo != null){
+            leitor = new LeitorSAX(super.arquivo);
+        }
         return leitor;
     }
 }

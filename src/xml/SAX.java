@@ -7,8 +7,6 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 import util.DateTimeUtil;
-import xml.adapter.DataAdapter;
-import xml.adapter.TimeAdapter;
 
 public class SAX extends DefaultHandler {
 

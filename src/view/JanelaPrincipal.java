@@ -58,10 +58,11 @@ public class JanelaPrincipal extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         BotaoAbstrato botao = (BotaoAbstrato) e.getSource();
         algoritimo = botao.getAlgoritimo();
-        EventoDAO eventoDao = new EventoDAO();
-        Evento evento = (Evento) algoritimo.ler();
-        evento.getAtividades().forEach(atividade -> eventoDao.salvar(atividade));
+        if(algoritimo != null){
+            EventoDAO eventoDao = new EventoDAO();
+            Evento evento = (Evento) algoritimo.ler();
+            evento.getAtividades().forEach(atividade -> eventoDao.salvar(atividade));
+            JOptionPane.showMessageDialog(null, "Atividades importadas com êxito.");
+        }
     }
-
-
 }
