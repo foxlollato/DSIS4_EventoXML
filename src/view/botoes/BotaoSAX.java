@@ -11,12 +11,11 @@ public class BotaoSAX extends BotaoAbstrato{
     }
 
     @Override
-    public AlgoritimoLeituraXML getAlgoritimo() {
+    public AlgoritimoLeituraXML getAlgoritimo(String arquivo) {
         LeitorSAX leitor = null;
-        chooseFile();
-        if(super.arquivo != null){
-            leitor = new LeitorSAX(super.arquivo);
-        }
+        leitor = new LeitorSAX(arquivo);
+        //Aqui você poderia fornecer uma implementação de DefaultHandler para a classe LeitorSAX (classe SAX no seu código)
+
         return leitor;
     }
 }

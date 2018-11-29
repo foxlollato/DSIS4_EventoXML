@@ -12,11 +12,11 @@ public class BotaoJAXB extends BotaoAbstrato {
     }
 
     @Override
-    public AlgoritimoLeituraXML getAlgoritimo() {
+    public AlgoritimoLeituraXML getAlgoritimo(String arquivo) {
         LeitorJAXB leitor = null;
-        chooseFile();
-        if(super.arquivo != null){
-            leitor = new LeitorJAXB(super.arquivo);
+
+        if(arquivo != null){ //Seria mais interessante encapsular a variável arquivo (apenas a superclasse deve ter acesso direto a ela)
+            leitor = new LeitorJAXB(arquivo);
             leitor.setClasses(Evento.class);
         }
         return leitor;

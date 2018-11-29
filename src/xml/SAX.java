@@ -59,7 +59,7 @@ public class SAX extends DefaultHandler {
 
         } else if (qName.equals("responsável")) {
             atividade.setResponsavel(valor);
-        }
+        } //ok
 
     }
 }

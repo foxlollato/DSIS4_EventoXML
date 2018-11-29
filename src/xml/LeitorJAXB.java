@@ -4,6 +4,10 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import javax.xml.bind.JAXBElement;
+import javax.xml.parsers.DocumentBuilderFactory;
+import model.Evento;
+import org.w3c.dom.Document;
 
 public class LeitorJAXB implements AlgoritimoLeituraXML {
 

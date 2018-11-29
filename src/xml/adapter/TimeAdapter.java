@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public class TimeAdapter extends XmlAdapter<String, LocalTime> {
+public class TimeAdapter extends XmlAdapter<String, LocalTime> { //ok
 
     DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm");
 

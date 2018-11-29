@@ -9,7 +9,7 @@ import java.util.List;
 
 @XmlRootElement(name = "evento")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Evento {
+public class Evento { //ok
 
     @XmlElement(name = "atividade")
     private List<Atividade> atividades;

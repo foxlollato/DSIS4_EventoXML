@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.ChronoField;
 
-public class DataAdapter extends XmlAdapter<String, LocalDate> {
+public class DataAdapter extends XmlAdapter<String, LocalDate> { //ok
 
     private DateTimeFormatter formatterData = new DateTimeFormatterBuilder().appendPattern("dd/MM")
             .parseDefaulting(ChronoField.YEAR, Year.now().getValue())

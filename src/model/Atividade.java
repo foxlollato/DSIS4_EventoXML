@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Atividade {
@@ -83,14 +84,16 @@ public class Atividade {
         this.responsavel = responsavel;
     }
 
+    //Poderia usar o String.format() abaixo (maior legibilidade do código)
+    //alterado
     @Override
     public String toString() {
-        return "Atividade{" +
-                "tipo='" + tipo + '\'' +
-                ", titulo='" + titulo + '\'' +
-                ", dia=" + dia +
-                ", horario=" + horario +
-                ", responsavel='" + responsavel + '\'' +
-                '}';
+        return String.format("Atividade{ Tipo: %s, Titulo: %s, dia: %s, horário: %s, responsável, %s }",
+                tipo.getValor(),
+                titulo,
+                dia.format(DateTimeFormatter.ofPattern("dd/MM")),
+                horario.format(DateTimeFormatter.ofPattern("HH:mm")),
+                responsavel
+        );
     }
 }

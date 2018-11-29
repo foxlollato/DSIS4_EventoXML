@@ -12,7 +12,7 @@ public class Principal {
             public void run() {
                 new JanelaPrincipal();
             }
-        });
+        }); //ok
 
     }
 }

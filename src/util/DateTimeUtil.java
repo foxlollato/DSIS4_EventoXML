@@ -21,16 +21,14 @@ public class DateTimeUtil {
     private static DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm");
 
     public static Timestamp toTimeStamp(LocalDate date, LocalTime time){
-        date.format(formatterData);
-        time.format(formatterHora);
-        return Timestamp.valueOf(LocalDateTime.of(date,time));
+        return Timestamp.valueOf(LocalDateTime.of(date,time)); //ok
     }
 
     public static LocalDate toLocalDate(String date){
-        return LocalDate.parse(date,formatterData);
+        return LocalDate.parse(date,formatterData); //ok
     }
 
     public static LocalTime toLocalTime(String time){
-        return LocalTime.parse(time,formatterHora);
+        return LocalTime.parse(time,formatterHora); //ok
     }
 }

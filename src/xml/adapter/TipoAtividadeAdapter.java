@@ -8,7 +8,7 @@ public class TipoAtividadeAdapter extends XmlAdapter<String, TipoAtividade> {
 
     @Override
     public TipoAtividade unmarshal(String v) throws Exception {
-        return TipoAtividade.valueOf(v.toUpperCase());
+        return TipoAtividade.valueOf(v.toUpperCase()); //ok
 
     }
 

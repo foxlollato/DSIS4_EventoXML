@@ -1,6 +1,6 @@
 package model;
 
-public enum TipoAtividade{
+public enum TipoAtividade{ //ok
     PALESTRA("palestra"),
     MINICURSO("minicurso"),
     OFICINA("oficina");
@@ -14,4 +14,5 @@ public enum TipoAtividade{
     public String getValor() {
         return valor;
     }
+    
 }
